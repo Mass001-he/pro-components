@@ -19,8 +19,8 @@ describe('paginationUtils', () => {
         current: 1,
         pageSize: 10,
         total: 100,
-        showSizeChanger: true,
-        pageSizeOptions: ['10', '20', '50', '100'],
+        sizeCanChange: true,
+        sizeOptions: [10, 20, 50, 100],
         showTotal: expect.any(Function),
         showJumper: true,
       });
@@ -30,7 +30,7 @@ describe('paginationUtils', () => {
       const customConfig = {
         current: 2,
         pageSize: 20,
-        showSizeChanger: false,
+        sizeCanChange: false,
       };
 
       const result = processPaginationConfig(customConfig, 100);
@@ -38,11 +38,10 @@ describe('paginationUtils', () => {
         current: 2,
         pageSize: 20,
         total: 100,
-        showSizeChanger: false,
-        pageSizeOptions: ['10', '20', '50', '100'],
+        sizeCanChange: false,
+        sizeOptions: [10, 20, 50, 100],
         showTotal: expect.any(Function),
         showJumper: true,
-        onChange: undefined,
       });
     });
 
@@ -134,7 +133,10 @@ describe('paginationUtils', () => {
   });
 
   describe('getCurrentPageData', () => {
-    const mockData = Array.from({ length: 25 }, (_, i) => ({ id: i + 1, name: `Item ${i + 1}` }));
+    const mockData = Array.from({ length: 25 }, (_, i) => ({
+      id: i + 1,
+      name: `Item ${i + 1}`,
+    }));
 
     it('should return correct page data', () => {
       const result = getCurrentPageData(mockData, 1, 10);

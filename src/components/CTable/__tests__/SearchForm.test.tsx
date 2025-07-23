@@ -20,8 +20,19 @@ vi.mock('@arco-design/web-react', () => ({
       </div>
     ),
   },
-  Input: ({ placeholder, onChange }: any) => (
-    <input data-testid="input" placeholder={placeholder} onChange={onChange} />
+  Input: Object.assign(
+    ({ placeholder, onChange }: any) => (
+      <input
+        data-testid="input"
+        placeholder={placeholder}
+        onChange={onChange}
+      />
+    ),
+    {
+      Group: ({ children }: any) => (
+        <div data-testid="input-group">{children}</div>
+      ),
+    }
   ),
   Select: ({ placeholder, options }: any) => (
     <select data-testid="select" placeholder={placeholder}>
@@ -91,7 +102,7 @@ const mockSearchConfig: SearchConfig[] = [
 describe('SearchForm', () => {
   it('should render search form with basic fields', () => {
     render(<SearchForm searchConfig={mockSearchConfig.slice(0, 2)} />);
-    
+
     expect(screen.getByText('姓名')).toBeInTheDocument();
     expect(screen.getByText('状态')).toBeInTheDocument();
     expect(screen.getByTestId('input')).toBeInTheDocument();
@@ -100,7 +111,7 @@ describe('SearchForm', () => {
 
   it('should render search and reset buttons', () => {
     render(<SearchForm searchConfig={mockSearchConfig.slice(0, 2)} />);
-    
+
     const buttons = screen.getAllByTestId('button');
     expect(buttons).toHaveLength(2);
     expect(screen.getByText('搜索')).toBeInTheDocument();
@@ -109,7 +120,7 @@ describe('SearchForm', () => {
 
   it('should show expand/collapse button when more than 3 fields', () => {
     render(<SearchForm searchConfig={mockSearchConfig} />);
-    
+
     const buttons = screen.getAllByTestId('button');
     expect(buttons).toHaveLength(3); // 搜索、重置、展开
     expect(screen.getByText('展开')).toBeInTheDocument();
@@ -117,11 +128,16 @@ describe('SearchForm', () => {
 
   it('should handle search button click', async () => {
     const onSearch = vi.fn();
-    render(<SearchForm searchConfig={mockSearchConfig.slice(0, 2)} onSearch={onSearch} />);
-    
+    render(
+      <SearchForm
+        searchConfig={mockSearchConfig.slice(0, 2)}
+        onSearch={onSearch}
+      />
+    );
+
     const searchButton = screen.getByText('搜索');
     fireEvent.click(searchButton);
-    
+
     await waitFor(() => {
       expect(onSearch).toHaveBeenCalledWith({ name: 'test', age: 25 });
     });
@@ -129,17 +145,22 @@ describe('SearchForm', () => {
 
   it('should handle reset button click', () => {
     const onReset = vi.fn();
-    render(<SearchForm searchConfig={mockSearchConfig.slice(0, 2)} onReset={onReset} />);
-    
+    render(
+      <SearchForm
+        searchConfig={mockSearchConfig.slice(0, 2)}
+        onReset={onReset}
+      />
+    );
+
     const resetButton = screen.getByText('重置');
     fireEvent.click(resetButton);
-    
+
     expect(onReset).toHaveBeenCalled();
   });
 
   it('should render different input types correctly', () => {
     render(<SearchForm searchConfig={mockSearchConfig} />);
-    
+
     // 只显示前3个字段（默认收起状态）
     expect(screen.getByTestId('input')).toBeInTheDocument(); // input type
     expect(screen.getByTestId('select')).toBeInTheDocument(); // select type
@@ -152,10 +173,8 @@ describe('SearchForm', () => {
   });
 
   it('should not render when searchConfig is invalid', () => {
-    const invalidConfig = [
-      { name: '', label: '', type: 'input' as const },
-    ];
-    
+    const invalidConfig = [{ name: '', label: '', type: 'input' as const }];
+
     const { container } = render(<SearchForm searchConfig={invalidConfig} />);
     expect(container.firstChild).toBeNull();
   });
