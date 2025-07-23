@@ -29,7 +29,7 @@
     "build-storybook": "storybook build",
     "preview": "vite preview",
     "prepublishOnly": "node scripts/pre-publish.js && npm run type-check && npm run build",
-    "release": "npm run prepublishOnly && npm publish"
+    "release": "npm run prepublishOnly && npm publish --access public"
   },
   "keywords": [
     "react",
