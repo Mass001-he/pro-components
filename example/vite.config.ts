@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@mass/pro-components': resolve(__dirname, '../src'),
+      '@mass001/pro-components': resolve(__dirname, '../src'),
     },
   },
   server: {

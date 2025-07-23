@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-#### 🎉 首次发布 @mass/pro-components
+#### 🎉 首次发布 @mass001/pro-components
 
 - **CTable 主组件**
   - 基于 Arco Design 的高级表格组件

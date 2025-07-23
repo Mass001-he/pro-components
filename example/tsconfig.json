@@ -19,8 +19,8 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "@mass/pro-components": ["../src/index.ts"],
-      "@mass/pro-components/*": ["../src/*"]
+      "@mass001/pro-components": ["../src/index.ts"],
+      "@mass001/pro-components/*": ["../src/*"]
     }
   },
   "include": ["src/**/*"],

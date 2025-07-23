@@ -1,8 +1,8 @@
 {
-  "name": "@mass/pro-components-example",
+  "name": "@mass001/pro-components-example",
   "version": "1.0.0",
   "private": true,
-  "description": "@mass/pro-components 组件库使用示例",
+  "description": "@mass001/pro-components 组件库使用示例",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

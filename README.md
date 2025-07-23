@@ -1,4 +1,4 @@
-# @mass/pro-components
+# @mass001/pro-components
 
 一个基于 React + TypeScript 的专业组件库，基于 Arco Design 设计系统构建。目前包含 CTable 高级表格组件，提供搜索、分页、排序、筛选等企业级功能。
 
@@ -17,11 +17,11 @@
 ## 📦 安装
 
 ```bash
-npm install @mass/pro-components
+npm install @mass001/pro-components
 # 或
-yarn add @mass/pro-components
+yarn add @mass001/pro-components
 # 或
-pnpm add @mass/pro-components
+pnpm add @mass001/pro-components
 ```
 
 ### 依赖要求
@@ -40,7 +40,7 @@ pnpm add @mass/pro-components
 
 ```tsx
 import React from 'react';
-import { CTable, CTableColumn } from '@mass/pro-components';
+import { CTable, CTableColumn } from '@mass001/pro-components';
 import '@arco-design/web-react/dist/css/arco.css';
 
 interface User {
@@ -93,7 +93,7 @@ function App() {
 
 ```tsx
 import React from 'react';
-import { CTable, CTableColumn } from '@mass/pro-components';
+import { CTable, CTableColumn } from '@mass001/pro-components';
 
 const columns: CTableColumn<User>[] = [
   {
@@ -154,7 +154,7 @@ function App() {
 
 ```tsx
 import React, { useState } from 'react';
-import { CTable, CTableColumn } from '@mass/pro-components';
+import { CTable, CTableColumn } from '@mass001/pro-components';
 
 function App() {
   const [loading, setLoading] = useState(false);

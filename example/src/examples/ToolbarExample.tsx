@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Message, Button } from '@arco-design/web-react';
-import { CTable, CTableColumn } from '@mass/pro-components';
+import { CTable, CTableColumn } from '@mass001/pro-components';
 
 interface Task {
   id: number;

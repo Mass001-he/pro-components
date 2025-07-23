@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Message, Button, Space, Select } from '@arco-design/web-react';
-import { CTable, CTableColumn } from '@mass/pro-components';
+import { CTable, CTableColumn } from '@mass001/pro-components';
 
 interface DataItem {
   id: number;

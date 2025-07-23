@@ -1,5 +1,5 @@
 // 测试组件导入是否正常
-import { CTable, CTableColumn, SearchConfig } from '@mass/pro-components';
+import { CTable, CTableColumn, SearchConfig } from '@mass001/pro-components';
 
 // 测试类型定义
 interface TestData {

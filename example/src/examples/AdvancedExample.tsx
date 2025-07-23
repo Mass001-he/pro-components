@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Message, Tag, Button } from '@arco-design/web-react';
-import { CTable, CTableColumn } from '@mass/pro-components';
+import { CTable, CTableColumn } from '@mass001/pro-components';
 
 interface Employee {
   id: number;

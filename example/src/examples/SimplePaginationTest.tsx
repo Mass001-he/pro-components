@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CTable, CTableColumn } from '@mass/pro-components';
+import { CTable, CTableColumn } from '@mass001/pro-components';
 
 interface TestData {
   id: number;
