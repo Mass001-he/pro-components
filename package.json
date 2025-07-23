@@ -51,7 +51,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Mass001-he/pro-components.git"
+    "url": "git+https://github.com/Mass001-he/pro-components.git"
   },
   "bugs": {
     "url": "https://github.com/Mass001-he/pro-components/issues"
