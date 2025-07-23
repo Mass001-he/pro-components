@@ -80,12 +80,7 @@ const data: User[] = [
 ];
 
 function App() {
-  return (
-    <CTable
-      columns={columns}
-      dataSource={data}
-    />
-  );
+  return <CTable columns={columns} dataSource={data} />;
 }
 ```
 
@@ -209,51 +204,51 @@ function App() {
 
 ### CTable Props
 
-| 属性 | 类型 | 默认值 | 说明 |
-|------|------|--------|------|
-| columns | `CTableColumn<T>[]` | - | 表格列配置 |
-| dataSource | `T[]` | - | 表格数据源 |
-| loading | `boolean` | `false` | 加载状态 |
-| rowKey | `string \| ((record: T) => string)` | `'id'` | 行唯一标识 |
-| search | `SearchConfig` | - | 搜索配置 |
-| pagination | `PaginationConfig \| false` | - | 分页配置 |
-| toolbar | `ToolbarConfig` | - | 工具栏配置 |
-| size | `'mini' \| 'small' \| 'default' \| 'large'` | `'default'` | 表格尺寸 |
-| bordered | `boolean` | `false` | 是否显示边框 |
-| stripe | `boolean` | `false` | 是否显示斑马纹 |
+| 属性       | 类型                                        | 默认值      | 说明           |
+| ---------- | ------------------------------------------- | ----------- | -------------- |
+| columns    | `CTableColumn<T>[]`                         | -           | 表格列配置     |
+| dataSource | `T[]`                                       | -           | 表格数据源     |
+| loading    | `boolean`                                   | `false`     | 加载状态       |
+| rowKey     | `string \| ((record: T) => string)`         | `'id'`      | 行唯一标识     |
+| search     | `SearchConfig`                              | -           | 搜索配置       |
+| pagination | `PaginationConfig \| false`                 | -           | 分页配置       |
+| toolbar    | `ToolbarConfig`                             | -           | 工具栏配置     |
+| size       | `'mini' \| 'small' \| 'default' \| 'large'` | `'default'` | 表格尺寸       |
+| bordered   | `boolean`                                   | `false`     | 是否显示边框   |
+| stripe     | `boolean`                                   | `false`     | 是否显示斑马纹 |
 
 ### CTableColumn
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
-| title | `string` | 列标题 |
-| dataIndex | `keyof T` | 数据字段名 |
-| key | `string` | 列唯一标识 |
-| width | `number` | 列宽度 |
-| fixed | `'left' \| 'right'` | 固定列 |
-| align | `'left' \| 'center' \| 'right'` | 对齐方式 |
-| render | `(value, record, index) => ReactNode` | 自定义渲染 |
-| valueType | `'text' \| 'number' \| 'date' \| 'dateTime' \| 'select' \| 'tag'` | 值类型 |
-| sorter | `boolean \| ((a, b) => number)` | 排序配置 |
-| filters | `{ text: string; value: any }[]` | 筛选配置 |
-| searchConfig | `ColumnSearchConfig` | 搜索配置 |
+| 属性         | 类型                                                              | 说明       |
+| ------------ | ----------------------------------------------------------------- | ---------- |
+| title        | `string`                                                          | 列标题     |
+| dataIndex    | `keyof T`                                                         | 数据字段名 |
+| key          | `string`                                                          | 列唯一标识 |
+| width        | `number`                                                          | 列宽度     |
+| fixed        | `'left' \| 'right'`                                               | 固定列     |
+| align        | `'left' \| 'center' \| 'right'`                                   | 对齐方式   |
+| render       | `(value, record, index) => ReactNode`                             | 自定义渲染 |
+| valueType    | `'text' \| 'number' \| 'date' \| 'dateTime' \| 'select' \| 'tag'` | 值类型     |
+| sorter       | `boolean \| ((a, b) => number)`                                   | 排序配置   |
+| filters      | `{ text: string; value: any }[]`                                  | 筛选配置   |
+| searchConfig | `ColumnSearchConfig`                                              | 搜索配置   |
 
 ### SearchConfig
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
-| searchConfig | `SearchConfig[]` | 自定义搜索配置 |
-| onSearch | `(values) => void` | 搜索回调 |
-| onReset | `() => void` | 重置回调 |
-| defaultCollapsed | `boolean` | 默认是否收起 |
+| 属性             | 类型               | 说明           |
+| ---------------- | ------------------ | -------------- |
+| searchConfig     | `SearchConfig[]`   | 自定义搜索配置 |
+| onSearch         | `(values) => void` | 搜索回调       |
+| onReset          | `() => void`       | 重置回调       |
+| defaultCollapsed | `boolean`          | 默认是否收起   |
 
 ### ToolbarConfig
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
-| title | `string` | 工具栏标题 |
+| 属性    | 类型             | 说明         |
+| ------- | ---------------- | ------------ |
+| title   | `string`         | 工具栏标题   |
 | actions | `ToolbarActions` | 操作按钮配置 |
-| extra | `ReactNode` | 额外内容 |
+| extra   | `ReactNode`      | 额外内容     |
 
 ## 🎨 主题定制
 
