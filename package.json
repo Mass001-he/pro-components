@@ -44,18 +44,19 @@
     "pagination",
     "sorting",
     "filtering",
-    "mass"
+    "mass",
+    "Mass001-he"
   ],
   "author": "usermass001",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mass/pro-components.git"
+    "url": "https://github.com/Mass001-he/pro-components.git"
   },
   "bugs": {
-    "url": "https://github.com/mass/pro-components/issues"
+    "url": "https://github.com/Mass001-he/pro-components/issues"
   },
-  "homepage": "https://github.com/mass/pro-components#readme",
+  "homepage": "https://github.com/Mass001-he/pro-components#readme",
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0",
